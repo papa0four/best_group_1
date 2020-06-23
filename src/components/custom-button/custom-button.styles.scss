@@ -1,0 +1,19 @@
+.custom-button,
+.custom-button:link,
+.custom-button:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    color: #000;
+    cursor: pointer;
+    background-color: rgb(218, 217, 228);
+}
+
+.custom-button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 1rem 2rem rgba(#000, .2);
+    background-color: rgb(107, 106, 117);
+}

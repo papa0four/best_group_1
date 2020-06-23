@@ -1,0 +1,90 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "first": "Han",
+      "last": "Solo",
+      "number": "123-456-4345",
+      "email": "hansolo@starwars.com"
+    },
+    {
+      "id": 2,
+      "first": "Anikan",
+      "last": "Skywalker",
+      "number": "123-456-4345",
+      "email": "skywalker@starwars.com"
+    },
+    {
+      "id": 3,
+      "first": "Ahsoka",
+      "last": "Tano",
+      "number": "123-654-7655",
+      "email": "ahsokatano@starwars.com"
+    },
+    {
+      "id": 4,
+      "first": "Cad",
+      "last": "Bane",
+      "number": "123-456-4345",
+      "email": "cadbane@starwars.com"
+    },
+    {
+      "first": "Ben",
+      "last": "Solo",
+      "number": "343-6566-4434",
+      "email": "bensolo@starwars.com",
+      "id": 5
+    },
+    {
+      "first": "Lando",
+      "last": "Calrissian",
+      "number": "454-3455-3342",
+      "email": "landocalrissian@starwars.com",
+      "id": 6
+    },
+    {
+      "first": "Poe",
+      "last": "Dameron",
+      "number": "454-3567-3342",
+      "email": "poedameron@starwars.com",
+      "id": 7
+    },
+    {
+      "first": "Maz",
+      "last": "Kanta",
+      "number": "454-778-5675",
+      "email": "mazkanta@starwars.com",
+      "id": 8
+    },
+    {
+      "first": "Padme",
+      "last": "Amidala",
+      "number": "665-676-3433",
+      "email": "padmeamidala@starwars.com",
+      "id": 9
+    },
+    {
+      "first": "Mon",
+      "last": "Mothma",
+      "number": "949-594-8764",
+      "email": "monmothma@starwars.com",
+      "id": 10
+    },
+    {
+      "first": "Qui-Gon",
+      "last": "Jinn",
+      "number": "544-449-6543",
+      "email": "quigonjinn@starwars.com",
+      "id": 11
+    }
+  ],
+  "rooms": [
+    {
+      "id": 1,
+      "title": "Home Sweet Home",
+      "beds": 2,
+      "isVacant": true,
+      "price": "125.00"
+    }
+  ]
+}

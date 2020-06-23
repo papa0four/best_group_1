@@ -1,17 +1,31 @@
 import React, { Fragment } from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import HomePage from './pages/HomePage/HomePage';
-import LoginForm from './components/login-register/LoginForm/LoginForm';
-import RegisterForm from './components/login-register/RegisterForm/RegisterForm';
+import Home from './pages/home/Home';
+import Customers from './pages/customers/Customers';
+import Navbar from './components/navbar/Navbar';
+import { Provider } from 'react-redux';
+import store from './store';
+import LoginPage from './pages/login/LoginPage';
+import RegisterPage from './pages/register/RegisterPage';
+import BookRoom from './pages/book-room/BookRoom';
 
 function App() {
   return (
-    <Fragment>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/login" component={LoginForm} />
-      <Route path="/register" component={RegisterForm} />
-    </Fragment>
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={LoginPage} />
+            <Route path="/register" component={RegisterPage} />
+            <Route path="/home" component={Home} />
+            <Route path="/customers" component={Customers} />
+            <Route path="/bookroom" component={BookRoom} />
+          </Switch>
+        </Fragment>
+      </Router>
+    </Provider>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../form-styles/LoginRegister.styles.css';
+import './LoginRegister.styles.css';
 import { Link } from 'react-router-dom';
 
 const LoginForm = () => {

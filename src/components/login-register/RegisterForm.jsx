@@ -1,5 +1,5 @@
 import React from 'react';
-import '../form-styles/LoginRegister.styles.css';
+import './LoginRegister.styles.css';
 import { Link } from 'react-router-dom';
 
 const RegisterForm = () => {
@@ -15,7 +15,7 @@ const RegisterForm = () => {
           <input type="password" name="confirm-password" placeholder="Confirm Password" required />
           <input type="submit" name="submit" value="Register" />
         </form>
-        <Link className="register" to={'/login'}>
+        <Link className="register" to={'/'}>
           Login
         </Link>
       </div>

@@ -1,0 +1,11 @@
+.room-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+
+    .button {
+        font-size: 3rem;
+        align-self: center;
+        margin-top: 5rem;
+    }
+}
