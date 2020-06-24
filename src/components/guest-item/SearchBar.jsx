@@ -1,19 +1,19 @@
 import React, { useRef } from 'react';
 import { connect } from 'react-redux';
-import { searchCustomer } from '../../actions/customerActions';
+import { searchGuest } from '../../actions/guestActions';
 
-const SearchBar = ({ searchCustomer }) => {
+const SearchBar = ({ searchGuest }) => {
   const text = useRef('');
 
   const onChange = (e) => {
-    searchCustomer(text.current.value);
+    searchGuest(text.current.value);
   };
   return (
     <div>
       <div div className="nav-wrapper">
         <form>
           <div div className="input-field">
-            <input id="search" type="search" placeholder="Search Customers" ref={text} onChange={onChange} />
+            <input id="search" type="search" placeholder="Search Guest" ref={text} onChange={onChange} />
             <label className="label-icon" htmlFor="search">
               <i className="material-icons">search</i>
             </label>
@@ -25,4 +25,4 @@ const SearchBar = ({ searchCustomer }) => {
   );
 };
 
-export default connect(null, { searchCustomer })(SearchBar);
+export default connect(null, { searchGuest })(SearchBar);

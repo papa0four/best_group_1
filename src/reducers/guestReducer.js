@@ -1,16 +1,16 @@
 import {
-  GET_CUSTOMERS,
+  GET_GUESTS,
   SET_LOADING,
-  EDIT_CUSTOMER,
-  SEARCH_CUSTOMER,
-  DELETE_CUSTOMER,
-  CUSTOMER_ERROR,
+  EDIT_GUEST,
+  SEARCH_GUEST,
+  DELETE_GUEST,
+  GUEST_ERROR,
   SET_CURRENT,
-  ADD_CUSTOMER,
+  ADD_GUEST,
 } from '../actions/types';
 
 const initialState = {
-  customers: [],
+  guests: [],
   current: null,
   loading: false,
   error: null,
@@ -18,39 +18,39 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case GET_CUSTOMERS:
+    case GET_GUESTS:
       return {
         ...state,
-        customers: action.payload,
+        guests: action.payload,
         loading: false,
       };
-    case ADD_CUSTOMER:
+    case ADD_GUEST:
       return {
         ...state,
-        customers: [...state, action.payload],
+        guest: [...state, action.payload],
         loading: false,
       };
-    case EDIT_CUSTOMER:
+    case EDIT_GUEST:
       return {
         ...state,
-        customers: state.customers.map((customer) => (customer.id === action.payload.id ? action.payload : customer)),
+        guests: state.guests.map((guest) => (guest.id === action.payload.id ? action.payload : guest)),
         current: null,
         loading: false,
       };
-    case SEARCH_CUSTOMER:
+    case SEARCH_GUEST:
       return {
         ...state,
-        customers: action.payload,
+        guests: action.payload,
       };
     case SET_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case DELETE_CUSTOMER:
+    case DELETE_GUEST:
       return {
         ...state,
-        customers: state.customers.filter((customer) => customer.id !== action.payload),
+        guests: state.guests.filter((guest) => guest.id !== action.payload),
       };
 
     case SET_CURRENT:
@@ -58,7 +58,7 @@ export default (state = initialState, action) => {
         ...state,
         current: action.payload,
       };
-    case CUSTOMER_ERROR:
+    case GUEST_ERROR:
       console.error(action.payload);
       return {
         ...state,

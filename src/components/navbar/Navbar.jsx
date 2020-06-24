@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -9,9 +9,9 @@ const Navbar = () => {
   return (
     <nav style={{ marginBottom: '2rem' }}>
       <div className="nav-wrapper nav-extended grey darken-2">
-        <a href="#" className="brand-logo" style={{ marginLeft: '2rem' }}>
+        <NavLink to="/home" className="brand-logo" style={{ marginLeft: '2rem' }}>
           <i className="material-icons">hotel</i>HAMS
-        </a>
+        </NavLink>
         <ul className="right hide-on-med-and-down">
           <li>
             <NavLink to="/home" activeStyle={activeStyle}>
@@ -24,8 +24,8 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li style={{ marginRight: '5rem' }}>
-            <NavLink to="/customers" activeStyle={activeStyle}>
-              Customers
+            <NavLink to="/guests" activeStyle={activeStyle}>
+              Guests
             </NavLink>
           </li>
           <li>

@@ -1,11 +1,11 @@
-export const GET_CUSTOMERS = 'GET_CUSTOMERS';
+export const GET_GUESTS = 'GET_GUESTS';
 export const SET_CURRENT = 'SET_CURRENT';
-export const EDIT_CUSTOMER = 'EDIT_CUSTOMER';
-export const SEARCH_CUSTOMER = 'SEARCH_CUSTOMER';
-export const DELETE_CUSTOMER = 'DELETE_CUSTOMER';
-export const ADD_CUSTOMER = 'ADD_CUSTOMER';
+export const EDIT_GUEST = 'EDIT_GUEST';
+export const SEARCH_GUEST = 'SEARCH_GUEST';
+export const DELETE_GUEST = 'DELETE_GUEST';
+export const ADD_GUEST = 'ADD_GUEST';
 export const SET_LOADING = 'SET_LOADING';
-export const CUSTOMER_ERROR = 'CUSTOMER_ERROR';
+export const GUEST_ERROR = 'GUEST_ERROR';
 export const GET_ROOMS = 'GET_ROOMS';
 export const SELECTED_ROOM = 'SELECTED_ROOM';
 export const ROOM_ERROR = 'ROOM_ERROR';

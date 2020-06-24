@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { editCustomer } from '../../actions/customerActions';
+import { editGuest } from '../../actions/guestActions';
 
-const EditModal = ({ current, editCustomer }) => {
+const EditModal = ({ guest, editGuest }) => {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const [number, setNumber] = useState('');
   const [email, setEmail] = useState('');
 
   useEffect(() => {
-    if (current) {
-      setFirst(current.first);
-      setLast(current.last);
-      setNumber(current.number);
-      setEmail(current.email);
+    if (guest) {
+      setFirst(guest.first);
+      setLast(guest.last);
+      setNumber(guest.number);
+      setEmail(guest.email);
     }
-  }, [current]);
+  }, [guest]);
 
   const onSubmit = () => {
-    const updatedCustomer = {
-      id: current.id,
+    const updatedGuest = {
+      id: guest.id,
       first,
       last,
       number,
       email,
     };
 
-    editCustomer(updatedCustomer);
+    editGuest(updatedGuest);
 
     //clear fields
     setFirst('');
@@ -38,7 +38,7 @@ const EditModal = ({ current, editCustomer }) => {
   return (
     <div id="edit-customer-modal" className="modal" style={{ width: '50%', height: '70%' }}>
       <div className="modal-content">
-        <h4 className="center-align">Edit Customer</h4>
+        <h4 className="center-align">Edit Guest</h4>
         <div className="row">
           <div className="input-field">
             <input
@@ -48,7 +48,7 @@ const EditModal = ({ current, editCustomer }) => {
               name="first"
               value={first}
               className="validate"
-              onChange={e => setFirst(e.target.value)}
+              onChange={(e) => setFirst(e.target.value)}
               required
             />
             <label htmlFor="first">First Name</label>
@@ -63,7 +63,7 @@ const EditModal = ({ current, editCustomer }) => {
               name="last"
               value={last}
               className="validate"
-              onChange={e => setLast(e.target.value)}
+              onChange={(e) => setLast(e.target.value)}
               required
             />
             <label htmlFor="last"> Last Name </label>
@@ -78,7 +78,7 @@ const EditModal = ({ current, editCustomer }) => {
               name="number"
               value={number}
               className="validate"
-              onChange={e => setNumber(e.target.value)}
+              onChange={(e) => setNumber(e.target.value)}
               required
             />
             <label htmlFor="number"> Number </label>
@@ -93,7 +93,7 @@ const EditModal = ({ current, editCustomer }) => {
               name="email"
               value={email}
               className="validate"
-              onChange={e => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <label htmlFor="email">Email</label>
@@ -109,8 +109,8 @@ const EditModal = ({ current, editCustomer }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  current: state.customer.current,
+const mapStateToProps = (state) => ({
+  guest: state.guest.current,
 });
 
-export default connect(mapStateToProps, { editCustomer })(EditModal);
+export default connect(mapStateToProps, { editGuest })(EditModal);

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addCustomer } from '../../actions/customerActions';
+import { addGuest } from '../../actions/guestActions';
 
-const AddModal = ({ addCustomer }) => {
+const AddModal = ({ addGuest }) => {
   const [first, setFirst] = useState('');
   const [last, setLast] = useState('');
   const [number, setNumber] = useState('');
@@ -10,14 +10,14 @@ const AddModal = ({ addCustomer }) => {
 
   //form submit
   const onSubmit = () => {
-    const newCustomer = {
+    const newGuest = {
       first,
       last,
       number,
       email,
     };
 
-    addCustomer(newCustomer);
+    addGuest(newGuest);
 
     //clear fields
     setFirst('');
@@ -30,7 +30,7 @@ const AddModal = ({ addCustomer }) => {
     <form onSubmit={onSubmit}>
       <div id="add-customer.modal" className="modal" style={{ width: '50%', height: '70%' }}>
         <div className="modal-content">
-          <h4 className="center-align">Add Customer</h4>
+          <h4 className="center-align">Add Guest</h4>
           <div className="row">
             <div className="input-field">
               <input
@@ -39,7 +39,7 @@ const AddModal = ({ addCustomer }) => {
                 type="text"
                 name="first"
                 className="validate"
-                onChange={e => setFirst(e.target.value)}
+                onChange={(e) => setFirst(e.target.value)}
                 required
               />
               <label htmlFor="first">First Name</label>
@@ -53,7 +53,7 @@ const AddModal = ({ addCustomer }) => {
                 type="text"
                 name="last"
                 className="validate"
-                onChange={e => setLast(e.target.value)}
+                onChange={(e) => setLast(e.target.value)}
                 required
               />
               <label htmlFor="last"> Last Name </label>
@@ -67,7 +67,7 @@ const AddModal = ({ addCustomer }) => {
                   type="text"
                   name="number"
                   className="validate"
-                  onChange={e => setNumber(e.target.value)}
+                  onChange={(e) => setNumber(e.target.value)}
                   required
                 />
                 <label htmlFor="number"> Number </label>
@@ -81,7 +81,7 @@ const AddModal = ({ addCustomer }) => {
                   type="email"
                   name="email"
                   className="validate"
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
                 <label htmlFor="email">Email</label>
@@ -99,4 +99,4 @@ const AddModal = ({ addCustomer }) => {
   );
 };
 
-export default connect(null, { addCustomer })(AddModal);
+export default connect(null, { addGuest })(AddModal);
