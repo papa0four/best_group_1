@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 import ReactCalendar from '../../components/react-calendar/ReactCalendar';
+import SearchBar from '../../components/customer-item/SearchBar';
+import CustomerItem from '../../components/customer-item/CustomerItem';
 
 const BookRoom = () => {
   return (

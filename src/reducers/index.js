@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import guestReducer from './guestReducer';
+import customerReducer from './customerReducer';
 import roomReducer from './roomReducer';
 
 export default combineReducers({
-  guest: guestReducer,
+  customer: customerReducer,
   room: roomReducer,
 });
