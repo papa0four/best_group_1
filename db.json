@@ -1,5 +1,5 @@
 {
-  "customers": [
+  "guest": [
     {
       "id": 1,
       "first": "Han",
@@ -27,13 +27,6 @@
       "last": "Bane",
       "number": "123-456-4345",
       "email": "cadbane@starwars.com"
-    },
-    {
-      "first": "Ben",
-      "last": "Solo",
-      "number": "343-6566-4434",
-      "email": "bensolo@starwars.com",
-      "id": 5
     },
     {
       "first": "Lando",

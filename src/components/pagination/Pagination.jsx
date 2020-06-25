@@ -9,13 +9,15 @@ const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
 
   return (
     <ul className="pagination center-align">
+      {' '}
       {pageNumbers.map((number) => (
         <li key={number} className="waves-effect">
           <a href="#" onClick={() => paginate(number)}>
-            {number}
-          </a>
+            {' '}
+            {number}{' '}
+          </a>{' '}
         </li>
-      ))}
+      ))}{' '}
     </ul>
   );
 };

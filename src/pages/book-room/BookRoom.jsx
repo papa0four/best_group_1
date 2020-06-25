@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import ReactCalendar from '../../components/react-calendar/ReactCalendar';
-import SearchBar from '../../components/customer-item/SearchBar';
-import CustomerItem from '../../components/customer-item/CustomerItem';
 
 const BookRoom = () => {
   return (
@@ -9,18 +7,18 @@ const BookRoom = () => {
       <div className="container">
         <div className="row">
           <div className="col s6">
-            <h3>Available Dates</h3>
+            <h3> Available Dates </h3>{' '}
             <div className="center-block">
               <div className="center-align">
                 <ReactCalendar />
-              </div>
-            </div>
-          </div>
+              </div>{' '}
+            </div>{' '}
+          </div>{' '}
           <div className="col s6">
-            <h1>Placeholder for list of customers with option to book room</h1>
-          </div>
-        </div>
-      </div>
+            <h1> Placeholder for list of customers with option to book room </h1>{' '}
+          </div>{' '}
+        </div>{' '}
+      </div>{' '}
     </Fragment>
   );
 };

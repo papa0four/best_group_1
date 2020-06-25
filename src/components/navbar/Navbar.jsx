@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -7,35 +7,49 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={{ marginBottom: '2rem' }}>
+    <nav
+      style={{
+        marginBottom: '2rem',
+      }}
+    >
       <div className="nav-wrapper nav-extended grey darken-2">
-        <a href="#" className="brand-logo" style={{ marginLeft: '2rem' }}>
-          <i className="material-icons">hotel</i>HAMS
-        </a>
+        <NavLink
+          to="/home"
+          className="brand-logo"
+          style={{
+            marginLeft: '2rem',
+          }}
+        >
+          <i className="material-icons"> hotel </i>HAMS{' '}
+        </NavLink>{' '}
         <ul className="right hide-on-med-and-down">
           <li>
             <NavLink to="/home" activeStyle={activeStyle}>
-              Home
-            </NavLink>
-          </li>
+              Home{' '}
+            </NavLink>{' '}
+          </li>{' '}
           <li>
             <NavLink to="/bookroom" activeStyle={activeStyle}>
-              Book Room
-            </NavLink>
-          </li>
-          <li style={{ marginRight: '5rem' }}>
-            <NavLink to="/customers" activeStyle={activeStyle}>
-              Customers
-            </NavLink>
-          </li>
+              Book Room{' '}
+            </NavLink>{' '}
+          </li>{' '}
+          <li
+            style={{
+              marginRight: '5rem',
+            }}
+          >
+            <NavLink to="/guests" activeStyle={activeStyle}>
+              Guests{' '}
+            </NavLink>{' '}
+          </li>{' '}
           <li>
-            <div>User</div>
-          </li>
+            <div> User </div>{' '}
+          </li>{' '}
           <li>
-            <a className="waves-effect waves-light btn">Sign Out</a>
-          </li>
-        </ul>
-      </div>
+            <a className="waves-effect waves-light btn"> Sign Out </a>{' '}
+          </li>{' '}
+        </ul>{' '}
+      </div>{' '}
     </nav>
   );
 };
