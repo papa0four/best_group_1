@@ -6,14 +6,14 @@ const GuestItem = ({ guest, setCurrent, deleteGuest }) => {
     <Fragment>
       <i className="medium material-icons"> person </i>
       <span className="title">
-        {guest.firstName} {guest.lastName}
+        {guest.firstname} {guest.lastname}
       </span>
       <p> {guest.phone} </p> <p> {guest.email} </p>
       <div className="secondary-content">
         <a href="#edit-customer-modal" onClick={() => setCurrent(guest)} className="modal-trigger">
           <i className="material-icons"> edit </i>
         </a>
-        <a onClick={() => deleteGuest(guest.id)}>
+        <a onClick={() => deleteGuest(guest._id)}>
           <i className="material-icons"> delete </i>
         </a>
       </div>

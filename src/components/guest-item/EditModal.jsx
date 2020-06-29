@@ -3,36 +3,44 @@ import { connect } from 'react-redux';
 import { editGuest } from '../../actions/guestActions';
 
 const EditModal = ({ guest, editGuest }) => {
-  const [first, setFirst] = useState('');
-  const [last, setLast] = useState('');
-  const [number, setNumber] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('')
+  const [PaymentMethod, setPaymentMethod] = useState('')
 
   useEffect(() => {
     if (guest) {
-      setFirst(guest.first);
-      setLast(guest.last);
-      setNumber(guest.number);
+      setFirstname(guest.firstname);
+      setLastname(guest.lastname);
+      setPhone(guest.phone);
       setEmail(guest.email);
+      setAddress(guest.address);
+      setPaymentMethod(guest.PaymentMethod);
     }
   }, [guest]);
 
   const onSubmit = () => {
     const updatedGuest = {
-      id: guest.id,
-      first,
-      last,
-      number,
+      id: guest._id,
+      firstname,
+      lastname,
+      phone,
       email,
+      address,
+      PaymentMethod
     };
 
     editGuest(updatedGuest);
 
     //clear fields
-    setFirst('');
-    setLast('');
-    setNumber('');
+    setFirstname('');
+    setLastname('');
+    setPhone('');
     setEmail('');
+    setAddress('');
+    setPaymentMethod('');
   };
 
   return (
@@ -45,7 +53,7 @@ const EditModal = ({ guest, editGuest }) => {
       }}
     >
       <div className="modal-content">
-        <h4 className="center-align"> Edit Guest </h4>{' '}
+        <h4 className="center-align"> Edit Guest </h4>
         <div className="row">
           <div className="input-field">
             <input
@@ -53,14 +61,14 @@ const EditModal = ({ guest, editGuest }) => {
               id="first"
               type="text"
               name="first"
-              value={first}
+              value={firstname}
               className="validate"
-              onChange={(e) => setFirst(e.target.value)}
+              onChange={(e) => setFirstname(e.target.value)}
               required
             />
-            <label htmlFor="first"> First Name </label>{' '}
-          </div>{' '}
-        </div>{' '}
+            <label htmlFor="first"> First Name </label>
+          </div>
+        </div>
         <div className="row">
           <div className="input-field">
             <input
@@ -68,14 +76,14 @@ const EditModal = ({ guest, editGuest }) => {
               id="last"
               type="text"
               name="last"
-              value={last}
+              value={lastname}
               className="validate"
-              onChange={(e) => setLast(e.target.value)}
+              onChange={(e) => setLastname(e.target.value)}
               required
             />
-            <label htmlFor="last"> Last Name </label>{' '}
-          </div>{' '}
-        </div>{' '}
+            <label htmlFor="last"> Last Name </label>
+          </div>
+        </div>
         <div className="row">
           <div className="input-field">
             <input
@@ -83,14 +91,14 @@ const EditModal = ({ guest, editGuest }) => {
               id="number"
               type="text"
               name="number"
-              value={number}
+              value={phone}
               className="validate"
-              onChange={(e) => setNumber(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)}
               required
             />
-            <label htmlFor="number"> Number </label>{' '}
-          </div>{' '}
-        </div>{' '}
+            <label htmlFor="number"> Number </label>
+          </div>
+        </div>
         <div className="row">
           <div className="input-field">
             <input
@@ -103,15 +111,43 @@ const EditModal = ({ guest, editGuest }) => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <label htmlFor="email"> Email </label>{' '}
-          </div>{' '}
-        </div>{' '}
+            <label htmlFor="email"> Email </label>
+          </div>
+        </div>
+        <div className="row">
+              <div className="input-field">
+                <input
+                  placeholder="Address"
+                  id="address"
+                  type="text"
+                  name="address"
+                  className="validate"
+                  onChange={(e) => setAddress(e.target.value)}
+                  required
+                />
+                <label htmlFor="address"> Address </label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field">
+                <input
+                  placeholder="Payment Method"
+                  id="paymentMethod"
+                  type="text"
+                  name="paymentMethod"
+                  className="validate"
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                  required
+                />
+                <label htmlFor="address"> Address </label>
+              </div>
+            </div>
         <div className="modal-footer">
           <a className="modal-close waves-effect blue waves-light btn" onClick={onSubmit} href="#">
-            Enter{' '}
-          </a>{' '}
-        </div>{' '}
-      </div>{' '}
+            Enter
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

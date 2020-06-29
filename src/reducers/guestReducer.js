@@ -33,14 +33,14 @@ export default (state = initialState, action) => {
     case EDIT_GUEST:
       return {
         ...state,
-        guests: state.guests.map((guest) => (guest.id === action.payload.id ? action.payload : guest)),
+        guests: state.guests.map((guest) => (guest._id === action.payload._id ? action.payload : guest)),
         current: null,
         loading: false,
       };
     case SEARCH_GUEST:
       return {
         ...state,
-        guests: action.payload,
+         guests: action.payload,
       };
     case SET_LOADING:
       return {
@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
     case DELETE_GUEST:
       return {
         ...state,
-        guests: state.guests.filter((guest) => guest.id !== action.payload),
+        guests: state.guests.filter((guest) => guest._id !== action.payload),
       };
 
     case SET_CURRENT:

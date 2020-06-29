@@ -3,27 +3,33 @@ import { connect } from 'react-redux';
 import { addGuest } from '../../actions/guestActions';
 
 const AddModal = ({ addGuest }) => {
-  const [first, setFirst] = useState('');
-  const [last, setLast] = useState('');
-  const [number, setNumber] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('')
+  const [PaymentMethod, setPaymentMethod] = useState('')
 
   //form submit
   const onSubmit = () => {
     const newGuest = {
-      first,
-      last,
-      number,
+      firstname,
+      lastname,
+      phone,
       email,
+      address,
+      PaymentMethod
     };
 
     addGuest(newGuest);
 
     //clear fields
-    setFirst('');
-    setLast('');
-    setNumber('');
+    setFirstname('');
+    setLastname('');
+    setPhone('');
     setEmail('');
+    setAddress('');
+    setPaymentMethod('');
   };
 
   return (
@@ -37,7 +43,7 @@ const AddModal = ({ addGuest }) => {
         }}
       >
         <div className="modal-content">
-          <h4 className="center-align"> Add Guest </h4>{' '}
+          <h4 className="center-align"> Add Guest </h4>
           <div className="row">
             <div className="input-field">
               <input
@@ -46,12 +52,12 @@ const AddModal = ({ addGuest }) => {
                 type="text"
                 name="first"
                 className="validate"
-                onChange={(e) => setFirst(e.target.value)}
+                onChange={(e) => setFirstname(e.target.value)}
                 required
               />
-              <label htmlFor="first"> First Name </label>{' '}
-            </div>{' '}
-          </div>{' '}
+              <label htmlFor="first"> First Name </label>
+            </div>
+          </div>
           <div className="row">
             <div className="input-field">
               <input
@@ -60,10 +66,10 @@ const AddModal = ({ addGuest }) => {
                 type="text"
                 name="last"
                 className="validate"
-                onChange={(e) => setLast(e.target.value)}
+                onChange={(e) => setLastname(e.target.value)}
                 required
               />
-              <label htmlFor="last"> Last Name </label>{' '}
+              <label htmlFor="last"> Last Name </label>
             </div>
             <div className="row">
               <div className="input-field">
@@ -73,12 +79,12 @@ const AddModal = ({ addGuest }) => {
                   type="text"
                   name="number"
                   className="validate"
-                  onChange={(e) => setNumber(e.target.value)}
+                  onChange={(e) => setPhone(e.target.value)}
                   required
                 />
-                <label htmlFor="number"> Number </label>{' '}
-              </div>{' '}
-            </div>{' '}
+                <label htmlFor="number"> Phone Number </label>
+              </div>
+            </div>
             <div className="row">
               <div className="input-field">
                 <input
@@ -90,9 +96,37 @@ const AddModal = ({ addGuest }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <label htmlFor="email"> Email </label>{' '}
-              </div>{' '}
-            </div>{' '}
+                <label htmlFor="email"> Email </label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field">
+                <input
+                  placeholder="Address"
+                  id="address"
+                  type="text"
+                  name="address"
+                  className="validate"
+                  onChange={(e) => setAddress(e.target.value)}
+                  required
+                />
+                <label htmlFor="address"> Address </label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field">
+                <input
+                  placeholder="Payment Method"
+                  id="paymentMethod"
+                  type="text"
+                  name="paymentMethod"
+                  className="validate"
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                  required
+                />
+                <label htmlFor="address"> Address </label>
+              </div>
+            </div>
             <div
               className="row center-align"
               style={{
@@ -101,11 +135,11 @@ const AddModal = ({ addGuest }) => {
             >
               <button className="btn waves-effect waves-light" type="submit" name="action">
                 Submit <i className="material-icons right"> send </i>{' '}
-              </button>{' '}
-            </div>{' '}
-          </div>{' '}
-        </div>{' '}
-      </div>{' '}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
   );
 };

@@ -10,10 +10,16 @@ import {
   ADD_GUEST,
 } from './types';
 
+const api = axios.create({
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+
 export const getGuests = () => async (dispatch) => {
   try {
     setLoading();
-    const res = await axios.get('http://localhost:8000/guest');
+    const res = await api.get('http://localhost:5000/guest');
     console.log(res.data);
 
     dispatch({
@@ -31,7 +37,7 @@ export const getGuests = () => async (dispatch) => {
 export const addGuest = (guest) => async (dispatch) => {
   try {
     setLoading();
-    const res = await axios.post('http://localhost:8000/guest', guest);
+    const res = await api.post('http://localhost:5000/guest', guest);
     dispatch({
       type: ADD_GUEST,
       payload: res.data,
@@ -48,7 +54,7 @@ export const addGuest = (guest) => async (dispatch) => {
 export const editGuest = (guest) => async (dispatch) => {
   try {
     setLoading();
-    const res = await axios.put(`http://localhost:8000/guest/${guest.id}`, guest);
+    const res = await api.put(`http://localhost:5000/guest/${guest.id}`, guest);
     dispatch({
       type: EDIT_GUEST,
       payload: res.data,
@@ -65,7 +71,8 @@ export const editGuest = (guest) => async (dispatch) => {
 export const searchGuest = (text) => async (dispatch) => {
   try {
     setLoading();
-    const res = await axios.get(`http://localhost:8000/guest?q=${text}`);
+    const res = await api.get(`http://localhost:5000/guest?q=${text}`);
+   
     dispatch({
       type: SEARCH_GUEST,
       payload: res.data,
@@ -81,7 +88,7 @@ export const searchGuest = (text) => async (dispatch) => {
 //delete guest
 export const deleteGuest = (id) => async (dispatch) => {
   try {
-    await axios.delete(`http://localhost:5000/guest/${id}`);
+    await api.delete(`http://localhost:5000/guest/${id}`);
     dispatch({
       type: DELETE_GUEST,
       payload: id,
